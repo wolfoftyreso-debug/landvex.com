@@ -9,7 +9,7 @@ import {
   principles,
   steps,
 } from "@/lib/home";
-import { landvexAb, pageMetadata, site } from "@/lib/site";
+import { landvexAb, pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata("/");
 
@@ -230,11 +230,6 @@ export default function HomePage() {
               not a form.
             </p>
             <div className="grid gap-3.5 text-[15px] text-muted">
-              <div>
-                <a className="font-semibold" href={`mailto:${site.email}`}>
-                  {site.email}
-                </a>
-              </div>
               <div>Landvex Inc. · Houston, Texas</div>
               <div>
                 {landvexAb.legalName} · {landvexAb.street}, {landvexAb.postalCode}{" "}

@@ -1,4 +1,4 @@
-import { landvexAb, landvexInc, site } from "@/lib/site";
+import { landvexAb, landvexInc } from "@/lib/site";
 
 export function CompanyAddress({ compact = false }: { compact?: boolean }) {
   return (
@@ -12,9 +12,6 @@ export function CompanyAddress({ compact = false }: { compact?: boolean }) {
         Org.nr {landvexAb.orgNr}
         {compact ? " · " : <br />}
         VAT {landvexAb.vat}
-      </div>
-      <div>
-        <a href={`mailto:${site.email}`}>{site.email}</a>
       </div>
       {compact ? (
         <div className="mt-2">

@@ -67,21 +67,43 @@ export const landvexInc = {
   label: "US HQ",
 } as const;
 
-// Drives the header, the mobile menu and the footer's work column, so a route
-// added here is reachable everywhere at once. Methodology is the one full page
-// in the set; the rest are sections of the home page.
+// Header and mobile menu only: the four sections of the home page. Methodology
+// is a page rather than a section and lives in the footer.
 export const nav = [
   { href: "/#capabilities", label: "Capabilities" },
   { href: "/#approach", label: "Approach" },
-  { href: "/methodology", label: "Methodology" },
   { href: "/#products", label: "Products" },
   { href: "/#company", label: "Company" },
 ] as const;
 
-export const legalNav = [
-  { href: "/company", label: "Company information" },
-  { href: "/privacy", label: "Privacy" },
-  { href: "/security", label: "Security" },
+// Three columns of three, so the footer reads as an even block rather than one
+// long column beside two short ones. Every route the site has appears exactly
+// once. Adding a link means rebalancing, not appending.
+export const footerNav = [
+  {
+    label: "Work",
+    links: [
+      { href: "/#capabilities", label: "Capabilities" },
+      { href: "/#approach", label: "Approach" },
+      { href: "/methodology", label: "Methodology" },
+    ],
+  },
+  {
+    label: "Company",
+    links: [
+      { href: "/#products", label: "Products" },
+      { href: "/#company", label: "Company" },
+      { href: "/company", label: "Company information" },
+    ],
+  },
+  {
+    label: "Legal and contact",
+    links: [
+      { href: "/privacy", label: "Privacy" },
+      { href: "/security", label: "Security" },
+      { href: "/#contact", label: "Contact" },
+    ],
+  },
 ] as const;
 
 // `updated` feeds <lastmod> in the sitemap. Move the date when a page's

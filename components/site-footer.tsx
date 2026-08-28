@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CompanyAddress } from "@/components/company-address";
 import { FooterGrain } from "@/components/footer-grain";
-import { legalNav, nav, site } from "@/lib/site";
+import { footerNav, site } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -15,25 +15,18 @@ export function SiteFooter() {
           </p>
           <CompanyAddress compact />
         </div>
-        <div className="flex flex-wrap gap-11 text-sm">
-          <nav className="grid gap-2.5" aria-label="Work">
-            {nav.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <nav className="grid gap-2.5" aria-label="Legal">
-            {legalNav.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <nav className="grid gap-2.5" aria-label="Contact">
-            <a href={`mailto:${site.email}`}>{site.email}</a>
-            <Link href="/#contact">Contact</Link>
-          </nav>
+        {/* Equal-width columns, so the three read as a grid rather than three
+              ragged stacks. Two per row below 560px, where three would not fit. */}
+          <div className="grid grid-cols-2 gap-x-10 gap-y-8 text-sm min-[560px]:grid-cols-3">
+          {footerNav.map((column) => (
+            <nav key={column.label} className="grid content-start gap-2.5" aria-label={column.label}>
+              {column.links.map((item) => (
+                <Link key={item.href} href={item.href}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          ))}
         </div>
       </div>
       <div className="border-t border-line">
