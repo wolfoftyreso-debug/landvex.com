@@ -67,9 +67,13 @@ export const landvexInc = {
   label: "US HQ",
 } as const;
 
+// Drives the header, the mobile menu and the footer's work column, so a route
+// added here is reachable everywhere at once. Methodology is the one full page
+// in the set; the rest are sections of the home page.
 export const nav = [
   { href: "/#capabilities", label: "Capabilities" },
   { href: "/#approach", label: "Approach" },
+  { href: "/methodology", label: "Methodology" },
   { href: "/#products", label: "Products" },
   { href: "/#company", label: "Company" },
 ] as const;

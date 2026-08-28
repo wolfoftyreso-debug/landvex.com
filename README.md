@@ -19,6 +19,8 @@ npm run typecheck
 npm run build
 ```
 
+CI runs `lint`, `typecheck`, `test` and `build` on every push and pull request.
+
 ## Environment
 
 Names only. Values belong in the host environment or `.env.local`, never in git.
@@ -28,6 +30,7 @@ Names only. Values belong in the host environment or `.env.local`, never in git.
 | `RESEND_API_KEY` | yes | Resend API key |
 | `CONTACT_FROM` | yes | Verified sender, typically `Landvex <contact@landvex.com>` |
 | `CONTACT_TO` | yes | Inbox; defaults to `contact@landvex.com` |
+| `SEMRUSH_API_KEY` | yes | Only for `npm run seo:semrush`, run by hand. The site never reads it |
 
 Do not put secrets in `NEXT_PUBLIC_*`. Rate limiting is in-process and therefore best-effort across instances.
 

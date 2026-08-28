@@ -13,9 +13,7 @@ const DATABASES = ["us", "se"] as const;
 
 const key = process.env.SEMRUSH_API_KEY?.trim();
 if (!key) {
-  console.error(
-    "SEMRUSH_API_KEY is not set. Add it as a secret (Cursor Dashboard → Cloud Agents → Secrets) or export it in your shell.",
-  );
+  console.error("SEMRUSH_API_KEY is not set. Export it in your shell before running this.");
   process.exit(1);
 }
 

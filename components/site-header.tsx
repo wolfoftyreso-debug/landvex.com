@@ -12,8 +12,11 @@ export function SiteHeader() {
           aria-label="Landvex home"
         >
           <span className="text-[22px] font-bold tracking-[-0.02em]">Landvex</span>
-          <span className="ml-[10mm] hidden h-[18px] w-px bg-edge min-[520px]:inline-block" />
-          <span className="eyebrow hidden text-subtle min-[520px]:inline">
+          {/* The location label yields to the nav between 62.5rem, where the
+              desktop nav appears, and 68rem, where both fit on one line. Left
+              in, it wraps the nav and pushes the CTA out of the header. */}
+          <span className="ml-[10mm] hidden h-[18px] w-px bg-edge min-[520px]:inline-block site:hidden min-[68rem]:inline-block" />
+          <span className="eyebrow hidden text-subtle min-[520px]:inline site:hidden min-[68rem]:inline">
             Stockholm · Houston
           </span>
         </Link>
