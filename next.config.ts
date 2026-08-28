@@ -41,7 +41,10 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  // Standalone is what the Dockerfile ships to AWS. Vercel builds Next itself
+  // and fails on the tracing files standalone does not leave behind, so the
+  // platform that sets VERCEL gets a native build instead. AWS is unaffected.
+  output: process.env.VERCEL ? undefined : "standalone",
   poweredByHeader: false,
   async redirects() {
     return [{ source: "/terms", destination: "/company", permanent: true }];
