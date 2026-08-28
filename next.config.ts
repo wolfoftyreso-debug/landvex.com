@@ -53,7 +53,15 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/:path*",
-        headers: securityHeaders,
+        headers: [
+          ...securityHeaders,
+          // The Vercel deployment is a test address; the header keeps every
+          // response out of the index, images included, while robots.ts only
+          // covers crawling. Production on AWS never sets VERCEL.
+          ...(process.env.VERCEL
+            ? [{ key: "X-Robots-Tag", value: "noindex, nofollow" }]
+            : []),
+        ],
       },
       ...indexedRoutes.map(({ path }) => ({
         source: path,

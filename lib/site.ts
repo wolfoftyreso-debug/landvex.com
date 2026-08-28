@@ -109,9 +109,9 @@ export const footerNav = [
 // `updated` feeds <lastmod> in the sitemap. Move the date when a page's
 // content changes; a date that lies is worse than no date at all.
 export const indexedRoutes = [
-  { path: "/", changeFrequency: "weekly", priority: 1, updated: "2026-08-26" },
-  { path: "/methodology", changeFrequency: "monthly", priority: 0.6, updated: "2026-08-26" },
-  { path: "/company", changeFrequency: "monthly", priority: 0.6, updated: "2026-08-24" },
-  { path: "/security", changeFrequency: "monthly", priority: 0.6, updated: "2026-08-26" },
-  { path: "/privacy", changeFrequency: "monthly", priority: 0.6, updated: "2026-08-26" },
+  { path: "/", changeFrequency: "weekly", priority: 1, updated: "2026-08-28" },
+  { path: "/methodology", changeFrequency: "monthly", priority: 0.6, updated: "2026-08-28" },
+  { path: "/company", changeFrequency: "monthly", priority: 0.6, updated: "2026-08-28" },
+  { path: "/security", changeFrequency: "monthly", priority: 0.6, updated: "2026-08-28" },
+  { path: "/privacy", changeFrequency: "monthly", priority: 0.6, updated: "2026-08-28" },
 ] as const;

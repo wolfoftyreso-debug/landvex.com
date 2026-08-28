@@ -4,7 +4,7 @@ import { nav } from "@/lib/site";
 
 export function SiteHeader() {
   return (
-    <header className="relative sticky top-0 z-50 border-b border-line bg-white/92 backdrop-blur-[10px]">
+    <header className="sticky top-0 z-50 border-b border-line bg-white/92 backdrop-blur-[10px]">
       <div className="wrap flex h-[4.75rem] items-center justify-between gap-8">
         <Link
           href="/"
